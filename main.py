@@ -441,7 +441,7 @@ def main():
             message_placeholder = "👩‍🍳 Master Chef is  ..."
             progress_placeholder.text(message_placeholder)
             revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt,submitted_essay_word_count,max_essay_words)
-            pattern = r'___TOTAL SCORE___:(\d+) / (\d+)'
+            pattern = r'___TOTAL SCORE___:(\d+)/(\d+)'
             match = re.search(pattern, revised_essay_college1)
             
             
@@ -469,7 +469,7 @@ def main():
         revised_essay_college1 = "Your essay feedback will appear here."
     
   
-    st.subheader(f"Essay Score for \n {college1}")
+    st.subheader(f"Essay Score for \n **{college1}**")
     st.subheader(f"Master Chef's Score {total_scored}/**{total_max_score}**")
     st.text_area(f"", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
 
