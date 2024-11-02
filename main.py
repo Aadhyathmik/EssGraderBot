@@ -173,8 +173,10 @@ grading_rubric = """
 
 Grade the essay using the defined rubric. Rubric has 2 parts. Classification Dimensions where we classify the essay into one of the cateogries. Scoring Dimensions where we assign a score to the essay. Numeric scoring can be decimals as well.
 Assign a classification for Classifier Dimensions
+Show the Dimension Name, Description and the Cateogry assigned. No need to dispaly score for this.
 Assign a score for Scoring Dimensions
-Show the total score obtained for SCoring Dimensions
+Show the Dimension Name, Description and the Score assigned
+Show the total score obtained for Scoring Dimensions
 Provide what worked well with examples
 Provide what can be improved with examples
 
@@ -252,7 +254,8 @@ grading_output_format = """
 The output should be in the following format
 
 {submitted_essay_word_count} / {max_essay_words}
-{Dimension}
+{Dimension} : {Dimension Name}
+{Dimension Description}
 {Description}
 {Score}/{Max Score}
 
