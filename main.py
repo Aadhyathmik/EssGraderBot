@@ -300,19 +300,19 @@ Display the Result in the following format
 
 Essay Word Count: {submitted_essay_word_count} / {max_essay_words} 
 
-Grading Type: {grading_type}
-Dimension: {dimension}
-Description: {description}
-Evaluation Result: {grading_output_value_category_result} : {grading_output_value_category_description}
+Grading Type: Grading Type
+Dimension: Dimension
+Description: Description
+Evaluation Result: Evaluation Result
 
 Grade the essay using the rubric 
 {numeric_grading_rubric_json}.
 Display the Result in the following format
 
 # Numeric Scoring Results Set Display
-Dimension: {dimension}
-Description: {description}
-Evaluation Result: {score}
+Dimension: Dimension
+Description: Description
+Evaluation Result: Evaluation Result
 
 Sum the Numeric Scoring Results. Call this Total Score.
 Sum the Max Allowed Score. Call this Total Max Score.
