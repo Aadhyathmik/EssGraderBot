@@ -2,6 +2,7 @@ import streamlit as st
 import openai
 import PyPDF2 
 from PIL import Image
+import json
 
 def count_words(text):
     if text:
