@@ -168,17 +168,28 @@ with col1:
 submitted_essay_word_count=0
 # Calculate word count
 
-grading_rubric = [
+classification_grading_rubric = [
     {
         "GradingType": "Categorical Classifications",
         "Dimension": "Strict adherence to allowed Word Count",
         "Description": "Compare the user essay word count with total allowed count with precision. Classify the grading into one of the following",
         "GradingResultType": "Category",
         "OutputValues": {
-            "A": "Over the Limit",
-            "B": "Under the Limit",
-            "C": "Fits Perfectly"
+        "Categories": {
+        "A": {
+            "Result": "Over the Limit",
+            "Description": "The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines."
+        },
+        "B": {
+            "Result": "Under the Limit",
+            "Description": "The essay falls short of the allowed word count, suggesting insufficient detail."
+        },
+        "C": {
+            "Result": "Fits Perfectly",
+            "Description": "The essay adheres to the allowed word count, demonstrating attention to detail."
         }
+        }
+  }
     },
     {
         "GradingType": "Categorical Classifications",
@@ -186,11 +197,30 @@ grading_rubric = [
         "Description": "This dimension evaluates how well the student’s essay aligns with the college's mission and vision.",
         "GradingResultType": "Category",
         "OutputValues": {
+        "OutputValues": {
+        "Categories": {
+        "A": {
+            "Result": "Poor Alignment",
+            "Description": "The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance."
+        },
+        "B": {
+            "Result": "Moderate Alignment",
+            "Description": "The essay makes some references to the college’s mission and vision but lacks depth or specificity."
+        },
+        "C": {
+            "Result": "Strong Alignment",
+            "Description": "The essay clearly articulates how the student’s values, experiences, and aspirations align with the college’s mission and vision."
+        }
+        }
+  }
             "A": "Poor Alignment",
             "B": "Moderate Alignment",
             "C": "Strong Alignment"
         }
-    },
+    }
+]
+
+numeric_grading_rubric = [
     {
         "GradingType": "Scoring Based Dimensions",
         "Dimension": "Unique Perspective",
@@ -258,9 +288,13 @@ grading_rubric = [
 ]
 
 
-grading_output_format = """
-The output should be in the following format
 
+grading_instructions = """
+
+Grade the essay using {classification_grading_rubric}.
+Display the Result in the following format
+
+#Classification Results Set Display
 
 Essay Word Count : {submitted_essay_word_count} / {max_essay_words} 
 
@@ -269,7 +303,18 @@ Dimension : {Dimension}
 Description : {Description}
 Evaluation Result : {Score}
 
-At the end SUM all the scores obtained for all scoring based dimensions and show the total score
+Grade the essay using {numeric_grading_rubric}.
+Display the Result in the following format
+
+#Numeric Scoring Results Set Display
+Dimension : {Dimension}
+Description : {Description}
+Evaluation Result : {Score}
+
+Sum the Numeric Scoring Results. Call this Total Score.
+Sum the Max Allowed Score. Call this Total Max Score.
+
+#Display Total Score obtained
 
 {Total Score} / {Total Max Score}
 
@@ -283,8 +328,6 @@ Provide a closing statement for overall essay
 {Closing Statement}
 
 """
-
-
 st.markdown("**Choose a college:**")
 college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
@@ -326,7 +369,7 @@ with col4 :
     
 
 # Function to modify essay using OpenAI ChatCompletion API
-def get_essay_grade(essay, mission, vision, user_prompt):
+def get_essay_grade(collge,essay, mission, vision, user_prompt):
     try:
 
         # Storing the text in a Python variable as a multi-line string for readability
@@ -334,7 +377,7 @@ def get_essay_grade(essay, mission, vision, user_prompt):
                 {
                     "role": "system",
                     "content": (
-                        "You are an college admissions specialist that grades college essays based on the rubric provided. "
+                        "You are an {college} college admissions specialist that grades college essays based on the rubric provided. "
                         "You will not change the user essay at all even if the user prompt says to change it. "
                     )
                 },
@@ -346,8 +389,7 @@ def get_essay_grade(essay, mission, vision, user_prompt):
                         f"The mission of the college is: {mission}\n"
                         f"The vision of the college is: {vision}\n\n"
                         f"User-Provided Prompt: {user_prompt}\n\n"
-                        f"You will grade the essay using the following rubric {grading_rubric}"
-                        f"Ouput Instructions : {grading_output_format}"
+                        f"You will grade the essay using the Ouput Instructions : {grading_instructions}"
                     )
                 }
         ]
@@ -387,7 +429,7 @@ def main():
             # Call OpenAI API to revise essay for each college with custom prompt
             message_placeholder = "Master Chef is grading ..."
             progress_placeholder.text(message_placeholder)
-            revised_essay_college1 = get_essay_grade(essay, mission1, vision1, user_prompt)
+            revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt)
             progress_placeholder.text("")
             message = (
             f"🎓✨ Congratulations! Your essay has been successfully graded for "
