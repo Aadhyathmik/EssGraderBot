@@ -294,11 +294,10 @@ All the rubrics are in JSON format.
 Grade the essay using the rubric 
 {classification_grading_rubric_json}.
 
-Display the Result in the following format
-
 # Classification Results Set Display
-
 Essay Word Count: {submitted_essay_word_count} / {max_essay_words} 
+
+Display the Result in the following format, Display Essay Word Count only once.
 
 Grading Type: Grading Type
 Dimension: Dimension
