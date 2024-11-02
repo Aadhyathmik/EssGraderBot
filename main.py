@@ -470,7 +470,8 @@ def main():
         revised_essay_college1 = "Your essay feedback will appear here."
     
   
-    st.subheader(f"Essay Score for \n **{college1}**")
+    st.subheader(f"Essay Evaluation Details & Feedback for \n")
+    st.subheader(f"**{college1}**")
     st.subheader(f"Master Chef's Score {total_scored}/**{total_max_score}**")
     st.text_area(f"", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
 
