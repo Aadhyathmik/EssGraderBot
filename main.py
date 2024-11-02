@@ -169,170 +169,113 @@ submitted_essay_word_count=0
 # Calculate word count
 
 grading_rubric = """
-{
-  "grading_rubric": {
-    "instruction": "Grade the essay using the defined rubric. Rubric has 2 parts: Classifier Dimensions and Scoring Dimensions.",
-    "classifier_dimensions": [
-      {
-        "name": "Strict adherence to allowed Word Count",
-        "description": "Compare the user essay word count with total allowed count with precision.",
-        "categories": [
-          {
-            "name": "Over the Limit",
-            "description": "The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines, which may suggest a lack of attention to detail or an inability to convey ideas concisely."
-          },
-          {
-            "name": "Under the Limit",
-            "description": "The essay falls short of the allowed word count. While this might demonstrate brevity, it could also imply that the student hasn't fully developed their ideas or provided enough detail to adequately address the prompt."
-          }
-        ]
-      },
-      {
-        "name": "Mission & Vision Alignment",
-        "description": "This dimension evaluates how well the student’s essay aligns with the college's mission and vision.",
-        "categories": [
-          {
-            "name": "Poor Alignment",
-            "description": "The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance."
-          },
-          {
-            "name": "Moderate Alignment",
-            "description": "The essay makes some references to the college’s mission and vision but lacks depth or specificity."
-          },
-          {
-            "name": "Strong Alignment",
-            "description": "The essay clearly articulates how the student’s values, experiences, and aspirations align with the college’s mission and vision."
-          }
-        ]
-      }
-    ],
-    "scoring_dimensions": [
-      {
-        "name": "Unique Perspective",
-        "description": "The student stands out by showing rare insights. It’s clear that no one else is quite like them, and the school will gain by having this student in their community.",
-        "max_points": 2
-      },
-      {
-        "name": "Unique Contribution",
-        "description": "The student shows they can connect different ideas. Their diverse perspective will help them make a distinctive impact on both the college community and the workforce in the future.",
-        "max_points": 2
-      },
-      {
-        "name": "Innovative",
-        "description": "The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.",
-        "max_points": 2
-      },
-      {
-        "name": "Maturity & Self-Reflection",
-        "description": "The student’s writing shows deep thinking, self-awareness, and a sense of maturity.",
-        "max_points": 2
-      },
-      {
-        "name": "Cohesive Narration",
-        "description": "The student describes various activities and experiences but connects them effectively, showing how they complement each other and highlight different aspects of their personality.",
-        "max_points": 2
-      },
-      {
-        "name": "Engaging",
-        "description": "The writing style is professional yet unique, resembling a narrative more than a formal autobiography.",
-        "max_points": 2
-      },
-      {
-        "name": "Compelling",
-        "description": "The student appears motivated, caring, and passionate, making them a valuable addition to any college community.",
-        "max_points": 2
-      }
-    ]
-  }
-}
+
+Grade the essay using the defined rubric. Rubric has 2 parts. Classification Dimensions where we classify the essay into one of the cateogries. Scoring Dimensions where we assign a score to the essay. Numeric scoring can be decimals as well.
+Assign a classification for Classifier Dimensions
+Show the Dimension Name, Description and the Cateogry assigned. No need to dispaly score for this.
+Assign a score for Scoring Dimensions
+Show the Dimension Name, Description and the Score assigned
+Show the total score obtained for Scoring Dimensions
+Provide what worked well with examples
+Provide what can be improved with examples
+
+Rubric:
+
+Classifier Dimensions : Strictly No number scoring. Must display classification.
+
+Dimension A : Strict adherence to allowed Word Count 
+
+Description : Compare the user essay word count with total allowed count with precision. Classify the grading into one of the following
+
+
+Over the Limit: The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines, which may suggest a lack of attention to detail or an inability to convey ideas concisely.
+
+Under the Limit: The essay falls short of the allowed word count. While this might demonstrate brevity, it could also imply that the student hasn't fully developed their ideas or provided enough detail to adequately address the prompt.
+
+Dimension B: Mission & Vision Alignment with 
+Description:  This dimension evaluates how well the student’s essay aligns with the college's mission and vision.
+
+Poor Alignment: The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance. This suggests that the student has not sufficiently researched the institution or does not fully grasp its values.
+
+Moderate Alignment: The essay makes some references to the college’s mission and vision but lacks depth or specificity. While there are relevant points, they do not form a cohesive narrative that convincingly demonstrates the student’s fit with the college.
+
+Strong Alignment: The essay clearly articulates how the student’s values, experiences, and aspirations align with the college’s mission and vision. This indicates thoughtful reflection and a strong fit, suggesting that the student would contribute positively to the college community.
+
+
+Scoring Based Dimensions
+
+Dimension 1 : Unique Perspective
+
+Description : The student stands out by showing rare insights. It’s clear that no one else is quite like them, and the school will gain by having this student in their community.
+
+Max Points to award : 2
+
+Dimension 2 : Unique Contribution
+
+Description : The student shows they can connect different ideas. Their diverse perspective will help them make a distinctive impact on both the college community and the workforce in the future.
+
+Max Points to award : 2
+
+Dimension 3 : Innovative
+
+Description :The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.
+
+Max Points to award : 2
+
+Dimension 4 : Maturity & self-reflection
+
+Description : The student’s writing shows deep thinking, self-awareness, and a sense of maturity.
+
+Max Points to award : 2
+
+Dimension 5 : Cohesive Narration
+
+Description : The student describes various activities and experiences but connects them effectively, showing how they complement each other and highlight different aspects of their personality. They identify a key quality that drives their success in these areas.
+
+Max Points to award : 2
+
+Dimension 6 : Engaging
+
+Description : The writing style is professional yet unique, resembling a narrative more than a formal autobiography. By the end of the essay, you feel like you truly know the student.
+
+Max Points to award : 2
+
+Dimension 7 : Compelling
+
+Description :  The student appears motivated, caring, and passionate, making them a valuable addition to any college community.
+
+Max Points to award : 2 
+
+
+
 """
 
 
-
 grading_output_format = """
-{
-  "grading_output_format": {
-    "submitted_essay_word_count": "{submitted_essay_word_count}",
-    "max_essay_words": "{max_essay_words}",
-    "classification_results": [
-      {
-        "dimension": "Strict adherence to allowed Word Count",
-        "dimension_name": "{Dimension A}",
-        "dimension_description": "Compare the user essay word count with total allowed count with precision.",
-        "classification": "{Classification}",
-        "classification_description": "{Classification Description}"
-      },
-      {
-        "dimension": "Mission & Vision Alignment",
-        "dimension_name": "{Dimension B}",
-        "dimension_description": "This dimension evaluates how well the student’s essay aligns with the college's mission and vision.",
-        "classification": "{Classification}",
-        "classification_description": "{Classification Description}"
-      }
-    ],
-    "scoring_results": [
-      {
-        "dimension": "Unique Perspective",
-        "dimension_name": "Unique Perspective",
-        "score": "{Score 1}",
-        "max_score": "2"
-      },
-      {
-        "dimension": "Unique Contribution",
-        "dimension_name": "Unique Contribution",
-        "score": "{Score 2}",
-        "max_score": "2"
-      },
-      {
-        "dimension": "Innovative",
-        "dimension_name": "Innovative",
-        "score": "{Score 3}",
-        "max_score": "2"
-      },
-      {
-        "dimension": "Maturity & Self-Reflection",
-        "dimension_name": "Maturity & Self-Reflection",
-        "score": "{Score 4}",
-        "max_score": "2"
-      },
-      {
-        "dimension": "Cohesive Narration",
-        "dimension_name": "Cohesive Narration",
-        "score": "{Score 5}",
-        "max_score": "2"
-      },
-      {
-        "dimension": "Engaging",
-        "dimension_name": "Engaging",
-        "score": "{Score 6}",
-        "max_score": "2"
-      },
-      {
-        "dimension": "Compelling",
-        "dimension_name": "Compelling",
-        "score": "{Score 7}",
-        "max_score": "2"
-      }
-    ],
-    "total_score": "{Total Score}",
-    "total_max_score": "14",  // Adjust if max score changes
-    "what_went_well": [
-      "{Point 1}",
-      "{Point 2}",
-      "{Point 3}",
-      "{Point 4}",
-      "{Point 5}"
-    ],
-    "improvements": [
-      "{Improvement 1}",
-      "{Improvement 2}",
-      "{Improvement 3}",
-      "{Improvement 4}",
-      "{Improvement 5}"
-    ],
-    "closing_statement": "{Closing Statement}"
-  }
-}
+The output should be in the following format
+
+{submitted_essay_word_count} / {max_essay_words}
+Classification Results
+{Dimension} : {Dimension Name}
+{Dimension Description}
+{Classification}:{Classification Description}
+Scoring Results
+{Dimension} : {Dimension Name}
+{Score}/{Max Score}
+
+At the end add all the scores obtained for each dimension and show the total score
+
+{Total Score} / {Total Max Score}
+
+Show upto 5 points on What Went Well
+(What Went Well}
+
+Show upto 5 points on What Went Well
+{What can be improved}
+
+Provide a closing statement for overall essay
+{Closing Statement}
+
 """
 
 
