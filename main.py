@@ -182,18 +182,18 @@ Provide what can be improved with examples
 
 Rubric:
 
-Classifier Dimensions
+Classifier Dimensions : Strictly No number scoring. Must display classification.
 
 Dimension A : Strict adherence to allowed Word Count 
 
-Description : Strictly No number scoring. Must display classification. Compare the user essay word count with total allowed count with precision. Classify the grading into the following
+Description : Compare the user essay word count with total allowed count with precision. Classify the grading into the following
 
 Over the Limit: The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines, which may suggest a lack of attention to detail or an inability to convey ideas concisely.
 
 Under the Limit: The essay falls short of the allowed word count. While this might demonstrate brevity, it could also imply that the student hasn't fully developed their ideas or provided enough detail to adequately address the prompt.
 
 Dimension B: Mission & Vision Alignment with 
-Description: Strictly No number scoring. Must display classification. This dimension evaluates how well the student’s essay aligns with the college's mission and vision.
+Description:  This dimension evaluates how well the student’s essay aligns with the college's mission and vision.
 
 Poor Alignment: The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance. This suggests that the student has not sufficiently researched the institution or does not fully grasp its values.
 
@@ -257,7 +257,7 @@ The output should be in the following format
 Classification Results
 {Dimension} : {Dimension Name}
 {Dimension Description}
-{Classification}
+{Classification}:{Classification Description}
 Scoring Results
 {Dimension} : {Dimension Name}
 {Score}/{Max Score}
