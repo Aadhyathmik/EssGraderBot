@@ -196,7 +196,7 @@ grading_rubric = [
         "Dimension": "Unique Perspective",
         "Description": "The student stands out by showing rare insights. It’s clear that no one else is quite like them, and the school will gain by having this student in their community.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -204,7 +204,7 @@ grading_rubric = [
         "Dimension": "Unique Contribution",
         "Description": "The student shows they can connect different ideas. Their diverse perspective will help them make a distinctive impact on both the college community and the workforce in the future.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -212,7 +212,7 @@ grading_rubric = [
         "Dimension": "Innovative",
         "Description": "The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -220,7 +220,7 @@ grading_rubric = [
         "Dimension": "Maturity & self-reflection",
         "Description": "The student’s writing shows deep thinking, self-awareness, and a sense of maturity.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -228,7 +228,7 @@ grading_rubric = [
         "Dimension": "Cohesive Narration",
         "Description": "The student describes various activities and experiences but connects them effectively, showing how they complement each other and highlight different aspects of their personality. They identify a key quality that drives their success in these areas.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -236,7 +236,7 @@ grading_rubric = [
         "Dimension": "Engaging",
         "Description": "The writing style is professional yet unique, resembling a narrative more than a formal autobiography. By the end of the essay, you feel like you truly know the student.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -244,7 +244,7 @@ grading_rubric = [
         "Dimension": "Compelling",
         "Description": "The student appears motivated, caring, and passionate, making them a valuable addition to any college community.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     },
     {
@@ -252,7 +252,7 @@ grading_rubric = [
         "Dimension": "Innovative",
         "Description": "The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.",
         "GradingResultType": "Numeric Score",
-        "Max Points": 2.0
+        "Max Points": 2.0,
         "Default Score":0.0
     }
 ]
