@@ -295,9 +295,10 @@ Grade the essay using the rubric
 {classification_grading_rubric_json}.
 
 # Classification Results Set Display
+Display the Word Counts in following format
 Essay Word Count: {submitted_essay_word_count} / {max_essay_words} 
 
-Display the Result in the following format, Display Essay Word Count only once.
+Display the Categorization Results in the following format, Display Essay Word Count only once.
 
 Grading Type: Grading Type
 Dimension: Dimension
@@ -420,6 +421,7 @@ def main():
     #if st.button("Revise Essay for Selected Colleges"):
     if submit_button:
         submitted_essay_word_count = count_words(essay)
+        st.write(submitted_essay_word_count)
         progress_placeholder = st.empty()
         progress_placeholder.text("Hmm...")
         with st.spinner("Tasting the Recipe..."):
