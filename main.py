@@ -320,7 +320,7 @@ Sum the Max Allowed Score. Call this Total Max Score.
 
 # Display Total Score obtained
 
-total_score / total_max_score
+___TOTAL SCORE___:total_score / total_max_score
 
 Show up to 5 points on What Went Well:
 
