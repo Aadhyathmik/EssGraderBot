@@ -291,8 +291,7 @@ You will only use {classification_grading_rubric}
 and {numeric_grading_rubric}.
 All the rubrics are in JSON format.
 
-Grade the essay using {classification_grading_rubric} dimension and description and 
-assign one of the output values cateogries.
+Grade the essay using the rubric {classification_grading_rubric}.
 
 
 Display the Result in the following format
@@ -306,7 +305,7 @@ Dimension : {Dimension}
 Description : {Description}
 Evaluation Result : {Grading Output Value Category Result} : { Grading Output Value Category Description}
 
-Grade the essay using {numeric_grading_rubric}
+Grade the essay using the rubric {numeric_grading_rubric}
 Display the Result in the following format
 
 #Numeric Scoring Results Set Display
