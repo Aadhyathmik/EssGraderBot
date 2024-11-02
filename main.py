@@ -441,7 +441,8 @@ def main():
             message_placeholder = "👩‍🍳 Master Chef is  ..."
             progress_placeholder.text(message_placeholder)
             revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt,submitted_essay_word_count,max_essay_words)
-            pattern = r'Total Score:(\d+\.\d+) / (\d+\.\d+)'
+            #pattern = r'Total Score:(\d+\.\d+) / (\d+\.\d+)'
+            pattern=r'Total Score:\s*(\d+\.\d+)\s*/\s*(\d+\.\d+)'
             match = re.search(pattern, revised_essay_college1)
             
             
