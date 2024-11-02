@@ -372,7 +372,7 @@ with col4 :
     
 
 # Function to modify essay using OpenAI ChatCompletion API
-def get_essay_grade(collge,essay, mission, vision, user_prompt,submitted_essay_word_count):
+def get_essay_grade(collge,essay, mission, vision, user_prompt,submitted_essay_word_count,max_essay_words):
     try:
 
         # Storing the text in a Python variable as a multi-line string for readability
