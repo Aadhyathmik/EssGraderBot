@@ -175,9 +175,9 @@ grading_rubric = [
         "Description": "Compare the user essay word count with total allowed count with precision. Classify the grading into one of the following",
         "GradingResultType": "Category",
         "OutputValues": {
-            "1": "Over the Limit",
-            "2": "Under the Limit",
-            "3": "Fits Perfectly"
+            "A": "Over the Limit",
+            "B": "Under the Limit",
+            "C": "Fits Perfectly"
         }
     },
     {
@@ -186,9 +186,9 @@ grading_rubric = [
         "Description": "This dimension evaluates how well the student’s essay aligns with the college's mission and vision.",
         "GradingResultType": "Category",
         "OutputValues": {
-            "1": "Poor Alignment",
-            "2": "Moderate Alignment",
-            "3": "Strong Alignment"
+            "A": "Poor Alignment",
+            "B": "Moderate Alignment",
+            "C": "Strong Alignment"
         }
     },
     {
@@ -267,9 +267,9 @@ Essay Word Count : {submitted_essay_word_count} / {max_essay_words}
 Grading Type : {Grading Type}
 Dimension : {Dimension}
 Description : {Description}
-Evaluation Result : {OutputValues}{Score}
+Evaluation Result : {Score}
 
-At the end SUM all the scores obtained for each dimension and show the total score
+At the end SUM all the scores obtained for all scoring based dimensions and show the total score
 
 {Total Score} / {Total Max Score}
 
