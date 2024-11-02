@@ -286,7 +286,7 @@ numeric_grading_rubric = [
 classification_grading_rubric_json = json.dumps(classification_grading_rubric, indent=2)
 numeric_grading_rubric_json= json.dumps(numeric_grading_rubric, indent=2)
 
-grading_instructions =f"""
+grading_instructions = f"""
 
 Do NOT make up any rubric or evaluation criteria. 
 All the rubrics are in JSON format.
@@ -296,39 +296,39 @@ Grade the essay using the rubric
 
 Display the Result in the following format
 
-#Classification Results Set Display
+# Classification Results Set Display
 
-Essay Word Count : {submitted_essay_word_count} / {max_essay_words} 
+Essay Word Count: {submitted_essay_word_count} / {max_essay_words} 
 
-Grading Type : {Grading Type}
-Dimension : {Dimension}
-Description : {Description}
-Evaluation Result : {Grading Output Value Category Result} : { Grading Output Value Category Description}
+Grading Type: {Grading Type}
+Dimension: {Dimension}
+Description: {Description}
+Evaluation Result: {Grading_Output_Value_Category_Result} : {Grading_Output_Value_Category_Description}
 
 Grade the essay using the rubric 
-{numeric_grading_rubric_json}
+{numeric_grading_rubric_json}.
 Display the Result in the following format
 
-#Numeric Scoring Results Set Display
-Dimension : {Dimension}
-Description : {Description}
-Evaluation Result : {Score}
+# Numeric Scoring Results Set Display
+Dimension: {Dimension}
+Description: {Description}
+Evaluation Result: {Score}
 
 Sum the Numeric Scoring Results. Call this Total Score.
 Sum the Max Allowed Score. Call this Total Max Score.
 
-#Display Total Score obtained
+# Display Total Score obtained
 
-{Total Score} / {Total Max Score}
+{Total_Score} / {Total_Max_Score}
 
-Show upto 5 points on What Went Well
-(What Went Well}
+Show up to 5 points on What Went Well:
+{What_Went_Well}
 
-Show upto 5 points on What Went Well
-{What can be improved}
+Show up to 5 points on What Can Be Improved:
+{What_Can_Be_Improved}
 
-Provide a closing statement for overall essay
-{Closing Statement}
+Provide a closing statement for overall essay:
+{Closing_Statement}
 """
 
 st.write(grading_instructions)
