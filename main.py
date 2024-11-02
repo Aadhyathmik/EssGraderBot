@@ -372,7 +372,7 @@ with col4 :
     
 
 # Function to modify essay using OpenAI ChatCompletion API
-def get_essay_grade(collge,essay, mission, vision, user_prompt):
+def get_essay_grade(collge,essay, mission, vision, user_prompt,submitted_essay_word_count):
     try:
 
         # Storing the text in a Python variable as a multi-line string for readability
@@ -389,6 +389,8 @@ def get_essay_grade(collge,essay, mission, vision, user_prompt):
                     "content": (
                         f"Here is a college essay written by a student:\n\n"
                         f"Essay: {essay}\n\n"
+                        f"Submitted Word Count: {submitted_essay_word_count}\n\n"
+                        f"Max Allowed Word Count: {max_essay_words}\n\n"
                         f"The mission of the college is: {mission}\n"
                         f"The vision of the college is: {vision}\n\n"
                         f"User-Provided Prompt: {user_prompt}\n\n"
@@ -421,7 +423,8 @@ def main():
     #if st.button("Revise Essay for Selected Colleges"):
     if submit_button:
         submitted_essay_word_count = count_words(essay)
-        st.write(submitted_essay_word_count)
+        st.write(f"Essay Words: {submitted_essay_word_count}/{max_essay_words}")
+
         progress_placeholder = st.empty()
         progress_placeholder.text("Hmm...")
         with st.spinner("Tasting the Recipe..."):
@@ -431,9 +434,9 @@ def main():
             vision1 = college_data[college1]["vision"]
 
             # Call OpenAI API to revise essay for each college with custom prompt
-            message_placeholder = "Master Chef is grading ..."
+            message_placeholder = "Master Chef is  ..."
             progress_placeholder.text(message_placeholder)
-            revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt)
+            revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt,submitted_essay_word_count,max_essay_words)
             progress_placeholder.text("")
             message = (
             f"🎓✨ Congratulations! Your essay has been successfully graded for "
