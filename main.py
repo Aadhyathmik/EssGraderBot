@@ -418,8 +418,10 @@ def get_essay_grade(collge,essay, mission, vision, user_prompt,submitted_essay_w
     
     
 def main():
-    """ The main function that handles the Streamlit app logic.  """
 
+    """ The main function that handles the Streamlit app logic.  """
+    total_scored=0
+    total_max_score=0
    
     # Button to generate revised essays
     #if st.button("Revise Essay for Selected Colleges"):
@@ -441,13 +443,14 @@ def main():
             revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt,submitted_essay_word_count,max_essay_words)
             pattern = r'___TOTAL SCORE___:(\d+) / (\d+)'
             match = re.search(pattern, revised_essay_college1)
-            total_score=0
-            total_max_score=0
+            
+            
+
             if match:
-                total_score = int(match.group(1))  # Extract the total_score
+                total_scored = int(match.group(1))  # Extract the total_score
                 total_max_score = int(match.group(2))  # Extract the total_max_score
             else:
-                total_score=0
+                total_scored=0
                 total_max_score=0
 
 
@@ -467,7 +470,7 @@ def main():
     
   
     st.subheader(f"Essay Score for \n {college1}")
-    st.subheader(f"Master Chef's Score {total_score}/**{total_max_score}**")
+    st.subheader(f"Master Chef's Score {total_scored}/**{total_max_score}**")
     st.text_area(f"", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
 
     st.session_state.button_disabled = False
