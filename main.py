@@ -254,9 +254,12 @@ grading_output_format = """
 The output should be in the following format
 
 {submitted_essay_word_count} / {max_essay_words}
+Classification Results
 {Dimension} : {Dimension Name}
 {Dimension Description}
-{Description}
+{Classification}
+Scoring Results
+{Dimension} : {Dimension Name}
 {Score}/{Max Score}
 
 At the end add all the scores obtained for each dimension and show the total score
