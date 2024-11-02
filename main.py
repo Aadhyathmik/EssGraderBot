@@ -168,102 +168,108 @@ with col1:
 submitted_essay_word_count=0
 # Calculate word count
 
-grading_rubric = """
-
-Grade the essay using the defined rubric. Rubric has 2 parts. Classification Dimensions where we classify the essay into one of the cateogries. Scoring Dimensions where we assign a score to the essay. Numeric scoring can be decimals as well.
-Assign a classification for Classifier Dimensions
-Show the Dimension Name, Description and the Cateogry assigned. No need to dispaly score for this.
-Assign a score for Scoring Dimensions
-Show the Dimension Name, Description and the Score assigned
-Show the total score obtained for Scoring Dimensions
-Provide what worked well with examples
-Provide what can be improved with examples
-
-Rubric:
-
-Classifier Dimensions : Strictly No number scoring. Must display classification.
-
-Dimension A : Strict adherence to allowed Word Count 
-
-Description : Compare the user essay word count with total allowed count with precision. Classify the grading into one of the following
-
-
-Over the Limit: The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines, which may suggest a lack of attention to detail or an inability to convey ideas concisely.
-
-Under the Limit: The essay falls short of the allowed word count. While this might demonstrate brevity, it could also imply that the student hasn't fully developed their ideas or provided enough detail to adequately address the prompt.
-
-Dimension B: Mission & Vision Alignment with 
-Description:  This dimension evaluates how well the student’s essay aligns with the college's mission and vision.
-
-Poor Alignment: The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance. This suggests that the student has not sufficiently researched the institution or does not fully grasp its values.
-
-Moderate Alignment: The essay makes some references to the college’s mission and vision but lacks depth or specificity. While there are relevant points, they do not form a cohesive narrative that convincingly demonstrates the student’s fit with the college.
-
-Strong Alignment: The essay clearly articulates how the student’s values, experiences, and aspirations align with the college’s mission and vision. This indicates thoughtful reflection and a strong fit, suggesting that the student would contribute positively to the college community.
-
-
-Scoring Based Dimensions
-
-Dimension 1 : Unique Perspective
-
-Description : The student stands out by showing rare insights. It’s clear that no one else is quite like them, and the school will gain by having this student in their community.
-
-Max Points to award : 2
-
-Dimension 2 : Unique Contribution
-
-Description : The student shows they can connect different ideas. Their diverse perspective will help them make a distinctive impact on both the college community and the workforce in the future.
-
-Max Points to award : 2
-
-Dimension 3 : Innovative
-
-Description :The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.
-
-Max Points to award : 2
-
-Dimension 4 : Maturity & self-reflection
-
-Description : The student’s writing shows deep thinking, self-awareness, and a sense of maturity.
-
-Max Points to award : 2
-
-Dimension 5 : Cohesive Narration
-
-Description : The student describes various activities and experiences but connects them effectively, showing how they complement each other and highlight different aspects of their personality. They identify a key quality that drives their success in these areas.
-
-Max Points to award : 2
-
-Dimension 6 : Engaging
-
-Description : The writing style is professional yet unique, resembling a narrative more than a formal autobiography. By the end of the essay, you feel like you truly know the student.
-
-Max Points to award : 2
-
-Dimension 7 : Compelling
-
-Description :  The student appears motivated, caring, and passionate, making them a valuable addition to any college community.
-
-Max Points to award : 2 
-
-
-
-"""
+grading_rubric = [
+    {
+        "GradingType": "Categorical Classifications",
+        "Dimension": "Strict adherence to allowed Word Count",
+        "Description": "Compare the user essay word count with total allowed count with precision. Classify the grading into one of the following",
+        "GradingResultType": "Category",
+        "OutputValues": {
+            "1": "Over the Limit",
+            "2": "Under the Limit",
+            "3": "Fits Perfectly"
+        }
+    },
+    {
+        "GradingType": "Categorical Classifications",
+        "Dimension": "Mission & Vision Alignment",
+        "Description": "This dimension evaluates how well the student’s essay aligns with the college's mission and vision.",
+        "GradingResultType": "Category",
+        "OutputValues": {
+            "1": "Poor Alignment",
+            "2": "Moderate Alignment",
+            "3": "Strong Alignment"
+        }
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Unique Perspective",
+        "Description": "The student stands out by showing rare insights. It’s clear that no one else is quite like them, and the school will gain by having this student in their community.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Unique Contribution",
+        "Description": "The student shows they can connect different ideas. Their diverse perspective will help them make a distinctive impact on both the college community and the workforce in the future.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Innovative",
+        "Description": "The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Maturity & self-reflection",
+        "Description": "The student’s writing shows deep thinking, self-awareness, and a sense of maturity.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Cohesive Narration",
+        "Description": "The student describes various activities and experiences but connects them effectively, showing how they complement each other and highlight different aspects of their personality. They identify a key quality that drives their success in these areas.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Engaging",
+        "Description": "The writing style is professional yet unique, resembling a narrative more than a formal autobiography. By the end of the essay, you feel like you truly know the student.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Compelling",
+        "Description": "The student appears motivated, caring, and passionate, making them a valuable addition to any college community.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    },
+    {
+        "GradingType": "Scoring Based Dimensions",
+        "Dimension": "Innovative",
+        "Description": "The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.",
+        "GradingResultType": "Numeric Score",
+        "Max Points": 2.0
+        "Default Score":0.0
+    }
+]
 
 
 grading_output_format = """
 The output should be in the following format
 
-{submitted_essay_word_count} / {max_essay_words}
-Classification Results
-{Dimension} : {Dimension Name}
-{Dimension Description}
-{Classification}:{Classification Description}
-Scoring Results
-{Dimension} : {Dimension Name}
-{Score}/{Max Score}
 
-At the end add all the scores obtained for each dimension and show the total score
+Essay Word Count : {submitted_essay_word_count} / {max_essay_words} 
+
+Grading Type : {Grading Type}
+Dimension : {Dimension}
+Description : {Description}
+Evaluation Result : {OutputValues}{Score}
+
+At the end SUM all the scores obtained for each dimension and show the total score
 
 {Total Score} / {Total Max Score}
 
