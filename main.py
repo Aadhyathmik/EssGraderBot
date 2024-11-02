@@ -282,17 +282,15 @@ numeric_grading_rubric = [
     }
 ]
 
-
+classification_grading_rubric_json = json.dumps(classification_grading_rubric, indent=2)
+numeric_grading_rubric_json= json.dumps(numeric_grading_rubric, indent=2)
 
 grading_instructions = """
 
 Do NOT make up any rubric or evaluation criteria. 
-You will only use {classification_grading_rubric}
-and {numeric_grading_rubric}.
 All the rubrics are in JSON format.
 
-Grade the essay using the rubric {classification_grading_rubric}.
-
+Grade the essay using the rubric {classification_grading_rubric_json}.
 
 Display the Result in the following format
 
@@ -305,7 +303,7 @@ Dimension : {Dimension}
 Description : {Description}
 Evaluation Result : {Grading Output Value Category Result} : { Grading Output Value Category Description}
 
-Grade the essay using the rubric {numeric_grading_rubric}
+Grade the essay using the rubric {numeric_grading_rubric_json}
 Display the Result in the following format
 
 #Numeric Scoring Results Set Display
