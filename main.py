@@ -472,7 +472,7 @@ def main():
   
     st.subheader(f"Essay Evaluation Details & Feedback for \n")
     st.subheader(f"**{college1}**")
-    st.subheader(f"Master Chef's Score {total_scored}/**{total_max_score}**")
+    st.subheader(f"Master Chef's Overall Score {total_scored}/**{total_max_score}**")
     st.text_area(f"", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
 
     st.session_state.button_disabled = False
