@@ -319,16 +319,15 @@ Sum the Max Allowed Score. Call this Total Max Score.
 
 # Display Total Score obtained
 
-{total_score} / {total_max_score}
+total_score / total_max_score
 
 Show up to 5 points on What Went Well:
-{what_went_well}
 
 Show up to 5 points on What Can Be Improved:
-{what_can_be_improved}
+
 
 Provide a closing statement for overall essay:
-{closing_statement}
+
 """
 
 st.write(grading_instructions)
