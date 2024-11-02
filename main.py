@@ -3,6 +3,7 @@ import openai
 import PyPDF2 
 from PIL import Image
 import json
+import re
 
 def count_words(text):
     if text:
@@ -438,6 +439,19 @@ def main():
             message_placeholder = "👩‍🍳 Master Chef is  ..."
             progress_placeholder.text(message_placeholder)
             revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt,submitted_essay_word_count,max_essay_words)
+            pattern = r'___TOTAL SCORE___:(\d+) / (\d+)'
+
+            if match:
+                total_score = int(match.group(1))  # Extract the total_score
+                total_max_score = int(match.group(2))  # Extract the total_max_score
+            else:
+                total_score=0
+                total_max_score=0
+
+
+            # Searching for the pattern in the response text
+            match = re.search(pattern, revised_essay_college1)
+
             progress_placeholder.text("")
             message = (
             f"🎓✨ Congratulations! Your essay has been successfully graded for "
@@ -451,6 +465,7 @@ def main():
     
   
     st.subheader(f"Essay Score for \n {college1}")
+    st.subheader(f"Master Chef's Score {total_score}/**{total_max_score}**")
     st.text_area(f"", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
 
     st.session_state.button_disabled = False
