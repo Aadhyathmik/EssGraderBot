@@ -321,7 +321,7 @@ Sum the Max Allowed Score. Call this Total Max Score.
 
 # Display Total Score obtained
 
-___TOTAL SCORE___:total_score / total_max_score
+Total Score:total_score / total_max_score
 
 Show up to 5 points on What Went Well:
 
@@ -441,7 +441,7 @@ def main():
             message_placeholder = "👩‍🍳 Master Chef is  ..."
             progress_placeholder.text(message_placeholder)
             revised_essay_college1 = get_essay_grade(college1,essay, mission1, vision1, user_prompt,submitted_essay_word_count,max_essay_words)
-            pattern = r'___TOTAL SCORE___:(\d+\.\d+) / (\d+\.\d+)'
+            pattern = r'Total Score:(\d+\.\d+) / (\d+\.\d+)'
             match = re.search(pattern, revised_essay_college1)
             
             
