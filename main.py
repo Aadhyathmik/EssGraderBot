@@ -184,9 +184,9 @@ Rubric:
 
 Classifier Dimensions
 
-Dimension A : Strictly No number scoring. Must display classification. We check for very Strict adherence to allowed Word Count 
+Dimension A : Strict adherence to allowed Word Count 
 
-Description : Compare the user essay word count with total allowed count with precision. Classify the grading into the following
+Description : Strictly No number scoring. Must display classification. Compare the user essay word count with total allowed count with precision. Classify the grading into the following
 
 Over the Limit: The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines, which may suggest a lack of attention to detail or an inability to convey ideas concisely.
 
