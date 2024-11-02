@@ -286,7 +286,15 @@ numeric_grading_rubric = [
 
 grading_instructions = """
 
-Grade the essay using {classification_grading_rubric}.
+Do NOT make up any rubric or evaluation criteria. 
+You will only use {classification_grading_rubric}
+and {numeric_grading_rubric}.
+All the rubrics are in JSON format.
+
+Grade the essay using {classification_grading_rubric} dimension and description and 
+assign one of the output values cateogries.
+
+
 Display the Result in the following format
 
 #Classification Results Set Display
@@ -296,9 +304,9 @@ Essay Word Count : {submitted_essay_word_count} / {max_essay_words}
 Grading Type : {Grading Type}
 Dimension : {Dimension}
 Description : {Description}
-Evaluation Result : {Score}
+Evaluation Result : {Grading Output Value Category Result} : { Grading Output Value Category Description}
 
-Grade the essay using {numeric_grading_rubric}.
+Grade the essay using {numeric_grading_rubric}
 Display the Result in the following format
 
 #Numeric Scoring Results Set Display
