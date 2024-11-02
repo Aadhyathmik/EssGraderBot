@@ -291,7 +291,7 @@ grading_instructions =f"""
 Do NOT make up any rubric or evaluation criteria. 
 All the rubrics are in JSON format.
 
-Grade the essay using the rubric ```json
+Grade the essay using the rubric 
 {classification_grading_rubric_json}.
 
 Display the Result in the following format
@@ -305,7 +305,7 @@ Dimension : {Dimension}
 Description : {Description}
 Evaluation Result : {Grading Output Value Category Result} : { Grading Output Value Category Description}
 
-Grade the essay using the rubric ```json
+Grade the essay using the rubric 
 {numeric_grading_rubric_json}
 Display the Result in the following format
 
