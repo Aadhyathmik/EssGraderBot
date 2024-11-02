@@ -6,7 +6,7 @@ import json
 
 def count_words(text):
     if text:
-        return len(text.split())
+        return len([word for word in text.split() if word])  # Exclude empty strings
     return 0
 
 def add_space(n=1):
