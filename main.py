@@ -175,21 +175,21 @@ classification_grading_rubric = [
         "Description": "Compare the user essay word count with total allowed count with precision. Classify the grading into one of the following",
         "GradingResultType": "Category",
         "OutputValues": {
-        "Categories": {
-        "A": {
-            "Result": "Over the Limit",
-            "Description": "The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines."
-        },
-        "B": {
-            "Result": "Under the Limit",
-            "Description": "The essay falls short of the allowed word count, suggesting insufficient detail."
-        },
-        "C": {
-            "Result": "Fits Perfectly",
-            "Description": "The essay adheres to the allowed word count, demonstrating attention to detail."
+            "Categories": {
+                "A": {
+                    "Result": "Over the Limit",
+                    "Description": "The essay exceeds the allowed word count. This indicates that the student has not adhered to the guidelines."
+                },
+                "B": {
+                    "Result": "Under the Limit",
+                    "Description": "The essay falls short of the allowed word count, suggesting insufficient detail."
+                },
+                "C": {
+                    "Result": "Fits Perfectly",
+                    "Description": "The essay adheres to the allowed word count, demonstrating attention to detail."
+                }
+            }
         }
-        }
-  }
     },
     {
         "GradingType": "Categorical Classifications",
@@ -197,25 +197,20 @@ classification_grading_rubric = [
         "Description": "This dimension evaluates how well the student’s essay aligns with the college's mission and vision.",
         "GradingResultType": "Category",
         "OutputValues": {
-        "OutputValues": {
-        "Categories": {
-        "A": {
-            "Result": "Poor Alignment",
-            "Description": "The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance."
-        },
-        "B": {
-            "Result": "Moderate Alignment",
-            "Description": "The essay makes some references to the college’s mission and vision but lacks depth or specificity."
-        },
-        "C": {
-            "Result": "Strong Alignment",
-            "Description": "The essay clearly articulates how the student’s values, experiences, and aspirations align with the college’s mission and vision."
-        }
-        }
-  }
-            "A": "Poor Alignment",
-            "B": "Moderate Alignment",
-            "C": "Strong Alignment"
+            "Categories": {
+                "A": {
+                    "Result": "Poor Alignment",
+                    "Description": "The essay fails to connect with the college’s mission and vision, indicating a lack of understanding or relevance."
+                },
+                "B": {
+                    "Result": "Moderate Alignment",
+                    "Description": "The essay makes some references to the college’s mission and vision but lacks depth or specificity."
+                },
+                "C": {
+                    "Result": "Strong Alignment",
+                    "Description": "The essay clearly articulates how the student’s values, experiences, and aspirations align with the college’s mission and vision."
+                }
+            }
         }
     }
 ]
