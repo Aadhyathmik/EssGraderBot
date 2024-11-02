@@ -330,7 +330,6 @@ Provide a closing statement for overall essay:
 
 """
 
-st.write(grading_instructions)
 
 st.markdown("**Choose a college:**")
 college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
