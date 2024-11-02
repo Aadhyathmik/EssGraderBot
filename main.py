@@ -448,8 +448,8 @@ def main():
             
 
             if match:
-                total_scored = int(match.group(1))  # Extract the total_score
-                total_max_score = int(match.group(2))  # Extract the total_max_score
+                total_scored = float(match.group(1))  # Extract the total_score
+                total_max_score = float(match.group(2))  # Extract the total_max_score
             else:
                 total_scored=0
                 total_max_score=0
