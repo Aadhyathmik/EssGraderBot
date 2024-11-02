@@ -300,35 +300,35 @@ Display the Result in the following format
 
 Essay Word Count: {submitted_essay_word_count} / {max_essay_words} 
 
-Grading Type: {Grading Type}
-Dimension: {Dimension}
-Description: {Description}
-Evaluation Result: {Grading_Output_Value_Category_Result} : {Grading_Output_Value_Category_Description}
+Grading Type: {grading_type}
+Dimension: {dimension}
+Description: {description}
+Evaluation Result: {grading_output_value_category_result} : {grading_output_value_category_description}
 
 Grade the essay using the rubric 
 {numeric_grading_rubric_json}.
 Display the Result in the following format
 
 # Numeric Scoring Results Set Display
-Dimension: {Dimension}
-Description: {Description}
-Evaluation Result: {Score}
+Dimension: {dimension}
+Description: {description}
+Evaluation Result: {score}
 
 Sum the Numeric Scoring Results. Call this Total Score.
 Sum the Max Allowed Score. Call this Total Max Score.
 
 # Display Total Score obtained
 
-{Total_Score} / {Total_Max_Score}
+{total_score} / {total_max_score}
 
 Show up to 5 points on What Went Well:
-{What_Went_Well}
+{what_went_well}
 
 Show up to 5 points on What Can Be Improved:
-{What_Can_Be_Improved}
+{what_can_be_improved}
 
 Provide a closing statement for overall essay:
-{Closing_Statement}
+{closing_statement}
 """
 
 st.write(grading_instructions)
