@@ -274,14 +274,6 @@ numeric_grading_rubric = [
         "Max Points": 2.0,
         "Default Score":0.0
     },
-    {
-        "GradingType": "Scoring Based Dimensions",
-        "Dimension": "Innovative",
-        "Description": "The student expresses real passion and motivation for their activities, clearly explaining why they are important to them.",
-        "GradingResultType": "Numeric Score",
-        "Max Points": 2.0,
-        "Default Score":0.0
-    }
 ]
 
 classification_grading_rubric_json = json.dumps(classification_grading_rubric, indent=2)
